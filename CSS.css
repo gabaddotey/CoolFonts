@@ -1,0 +1,165 @@
+body{
+	background:#1A7E86;
+	overflow-x:hidden;
+}
+
+/*Just to visualize the sections
+div{
+	background: white;
+	border: 4px dotted black;
+
+}
+*/
+
+top{
+	margin: 10px;
+}
+
+content{
+	position:relative;
+	top: 500px;
+}
+
+marquee{
+	position:static;
+	top:50px;
+	margin-top: 35px;
+	
+	color:#F4BF5B;
+	font-size:55pt;
+	background: #D94535;
+	border: 4px solid #A0AB7C;
+	font-family: cursive;
+	direction: "up";
+	
+}
+
+.wrapper{
+	display:grid;
+	grid-template-columns: 50% 50%;
+	column-gap: 20px;
+}
+
+nav{
+	position:fixed;
+	top:0px;
+	width:98.7%;
+	text-align: center;
+	padding: 10px;
+	z-index: 1;
+}
+
+.navbtn{
+	border-radius: 8px;
+	background-color:#D94535;
+	width: 244px;
+	font-size: 16px;
+	border: 2px solid #A0AB7C;
+	text-justify: center;
+	padding-bottom: 3px;
+
+}
+
+
+h1,h2,h3,p{
+	color:#F4BF5B;
+	font-family: cursive;
+}
+
+h1{
+	font-size:33pt;
+}
+
+a{
+	font-family:cursive;
+	color:#A0AB7C;
+}
+
+a:hover {
+  background-color: #D94535;
+}
+
+.pics{
+	display:grid;
+	position:relative;
+	row-gap:10px;
+	margin-left: 0px;
+	margin-right: -100%;
+	background: white;
+	border-radius: 35px;
+}
+
+.cap{
+	text-align:center;
+	padding:20px;
+	
+	font-size: 18pt;
+	color:#A0AB7C;
+	opacity:1;
+}
+
+
+img.card{
+	hight:450px;
+	width:450px;
+}
+
+
+
+/* this and the #one hover part allow me to change the properties of a different object when it is hovered over
+This should eventually make it so that every card other than the hovered card is less opaque and the hovered car is scaled or moved or smth
+AND if text with a link to the correspondding font is visible or not */
+
+.pics{
+	pointer-events:none;
+}
+
+.pics >img{
+	pointer-events:auto;
+}
+
+.pics:hover > img.card{
+	opacity:0.3;
+}
+
+/*Previous sibling selector workaround from medium.com*/
+
+#one:hover{
+	transform: rotate(14deg);
+	z-index:1;
+	opacity:1;
+}
+
+
+#two:hover{
+	transform: rotate(-12deg);
+	z-index:1;
+	opacity:1;
+}
+
+/* I figured out how to make each photo's specific caption appear on hover by adding a second class!!*/
+#one:not(:hover) ~ #cap1{
+	opacity:0;
+}
+
+#two:not(:hover) ~ #cap2{
+	opacity:0;
+}
+
+img#one {
+        position: relative;
+        left: 30%;
+        -webkit-transform: rotate(4deg);
+}
+
+img#two {
+        position: relative;
+        left: 30%;
+        -webkit-transform: rotate(-3deg);
+}
+
+
+.home{
+	font-size:22pt;
+
+}
